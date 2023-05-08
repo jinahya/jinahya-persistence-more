@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ba952a37-1f75-44ed-aec9-62fb46747f3b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/AttributeConverters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/AttributeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/AttributeEnumConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/AttributeEnumConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/AttributeEnumHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/AttributeEnumUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/Mapped.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/MaskEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/MaskEnumAttributeConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/MaskEnumConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/MaskEnumHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/MaskEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/__BitFace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/__BitMask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/color/AbstractaRgb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/color/ColorModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/color/Rgb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/color/RgbConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence/more/color/RgbUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/jinahya/persistence/more/AttributeConvertersTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="module-info" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PUSK5BtHuG1Ospu74HFDcfqZ5m" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showModules" value="false" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/onacit/gitcl/github.com/jinahya/persistence-more/src/main/java/com/github/jinahya/persistence",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/github/jinahya/persistence" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.github.jinahya.persistence" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.github.jinahya.persistence.more" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.jinahya.persistence.color" />
+      <recent name="com.github.jinahya.persistence" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ba952a37-1f75-44ed-aec9-62fb46747f3b" name="Changes" comment="" />
+      <created>1683510100154</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683510100154</updated>
+      <workItem from="1683510101218" duration="18984000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
