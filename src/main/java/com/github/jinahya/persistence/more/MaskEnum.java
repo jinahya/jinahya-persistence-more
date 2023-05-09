@@ -19,8 +19,8 @@ public interface MaskEnum
          * @return {@code true} if this mask is on the {@code face}; {@code false} otherwise.
          */
         default boolean isOn(final long face) {
-            return __BitFace.OfLong.of(face)
-                    .isWearing(__BitMask.OfLong.maskOfLong(mask()))
+            return BitFace.OfLong.of(face)
+                    .isWearing(BitMask.OfLong.of(mask()))
                     ;
         }
 
@@ -31,9 +31,9 @@ public interface MaskEnum
          * @return new face with this mask on.
          */
         default long putOnTo(final long face) {
-            return __BitFace.OfLong.of(face)
-                    .putOn(__BitMask.OfLong.maskOfLong(mask()))
-                    .value
+            return BitFace.OfLong.of(face)
+                    .putOn(BitMask.OfLong.of(mask()))
+                    .getValue()
                     ;
         }
 
@@ -44,9 +44,9 @@ public interface MaskEnum
          * @return new face with this mask off.
          */
         default long takeOffFrom(final long face) {
-            return __BitFace.OfLong.of(face)
-                    .takeOff(__BitMask.OfLong.maskOfLong(mask()))
-                    .value
+            return BitFace.OfLong.of(face)
+                    .takeOff(BitMask.OfLong.of(mask()))
+                    .getValue()
                     ;
         }
 
@@ -82,8 +82,8 @@ public interface MaskEnum
      * @return {@code true} if this mask is on the {@code face}; {@code false} otherwise.
      */
     default boolean isOn(final int face) {
-        return __BitFace.of(face)
-                .isWearing(__BitMask.maskOf(mask()))
+        return BitFace.of(face)
+                .isWearing(BitMask.of(mask()))
                 ;
     }
 
@@ -94,8 +94,8 @@ public interface MaskEnum
      * @return new face with this mask on.
      */
     default int putOnTo(final int face) {
-        return __BitFace.of(face)
-                .putOn(__BitMask.maskOf(mask()))
+        return BitFace.of(face)
+                .putOn(BitMask.of(mask()))
                 .getValue()
                 ;
     }
@@ -107,8 +107,8 @@ public interface MaskEnum
      * @return new face with this mask off.
      */
     default int takeOffFrom(final int face) {
-        return __BitFace.of(face)
-                .takeOff(__BitMask.maskOf(mask()))
+        return BitFace.of(face)
+                .takeOff(BitMask.of(mask()))
                 .getValue();
     }
 

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import static java.util.Arrays.stream;
 
 /**
- * An interface for converting {@link AttributeEnum} type to database type.
+ * An interface for converting {@link AttributeEnum} type to database type, and vice versa.
  *
  * @param <E> enum type parameter
  * @param <A> attribute type parameter

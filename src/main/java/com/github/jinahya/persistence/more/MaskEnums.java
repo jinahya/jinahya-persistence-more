@@ -16,7 +16,7 @@ public final class MaskEnums {
     public static final class OfLong {
 
         public static long requireValidMask(final long mask) {
-            return __BitMask.OfLong.requireValidValue(mask);
+            return BitMask.OfLong.requireValidValue(mask);
         }
 
         /**
@@ -75,7 +75,7 @@ public final class MaskEnums {
 
         public static <E extends MaskEnum.OfLong> Set<E> valuesOf(
                 final long face, final Stream<Class<? extends E>> stream) {
-            __BitFace.OfLong.requireValidValue(face);
+            BitFace.OfLong.requireValidValue(face);
             Objects.requireNonNull(stream, "stream is null");
             return stream.flatMap(ec -> Arrays.stream(ec.getEnumConstants()).filter(m -> m.isOn(face)))
                     .collect(Collectors.toSet());
@@ -123,7 +123,7 @@ public final class MaskEnums {
     }
 
     public static int requireValidMask(final int mask) {
-        return __BitMask.requireValidValue(mask);
+        return BitMask.requireValidValue(mask);
     }
 
     /**
@@ -180,7 +180,7 @@ public final class MaskEnums {
     }
 
     public static <E extends MaskEnum> Set<E> valuesOf(final int face, final Stream<Class<? extends E>> stream) {
-        __BitFace.requireValidValue(face);
+        BitFace.requireValidValue(face);
         Objects.requireNonNull(stream, "stream is null");
         return stream.flatMap(ec -> Arrays.stream(ec.getEnumConstants()).filter(m -> m.isOn(face)))
                 .collect(Collectors.toSet());

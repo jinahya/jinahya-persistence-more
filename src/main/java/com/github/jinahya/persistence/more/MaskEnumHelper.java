@@ -24,7 +24,7 @@ final class MaskEnumHelper {
             if (!enumClass.isEnum()) {
                 throw new IllegalArgumentException("not declared as an enum: " + enumClass);
             }
-            long maskOfAll = __BitMask.OfLong.VALUE_OF_NONE;
+            long maskOfAll = 0L;
             for (final E enumConstant : enumClass.getEnumConstants()) {
                 maskOfAll |= enumConstant.mask();
             }
@@ -54,7 +54,7 @@ final class MaskEnumHelper {
         if (!enumClass.isEnum()) {
             throw new IllegalArgumentException("not declared as an enum: " + enumClass);
         }
-        int maskOfAll = __BitMask.VALUE_OF_NONE;
+        int maskOfAll = 0;
         for (final E enumConstant : enumClass.getEnumConstants()) {
             maskOfAll |= enumConstant.mask();
         }
