@@ -20,8 +20,7 @@ public interface MaskEnum
          */
         default boolean isOn(final long face) {
             return BitFace.OfLong.of(face)
-                    .isWearing(BitMask.OfLong.of(mask()))
-                    ;
+                    .isWearing(BitMask.OfLong.of(mask()));
         }
 
         /**
@@ -33,8 +32,7 @@ public interface MaskEnum
         default long putOnTo(final long face) {
             return BitFace.OfLong.of(face)
                     .putOn(BitMask.OfLong.of(mask()))
-                    .getValue()
-                    ;
+                    .getValue();
         }
 
         /**
@@ -46,8 +44,7 @@ public interface MaskEnum
         default long takeOffFrom(final long face) {
             return BitFace.OfLong.of(face)
                     .takeOff(BitMask.OfLong.of(mask()))
-                    .getValue()
-                    ;
+                    .getValue();
         }
 
         /**
@@ -83,8 +80,7 @@ public interface MaskEnum
      */
     default boolean isOn(final int face) {
         return BitFace.of(face)
-                .isWearing(BitMask.of(mask()))
-                ;
+                .isWearing(BitMask.of(mask()));
     }
 
     /**
