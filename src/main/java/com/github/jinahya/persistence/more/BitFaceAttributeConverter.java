@@ -3,7 +3,7 @@ package com.github.jinahya.persistence.more;
 import jakarta.persistence.Converter;
 
 @Converter
-public class BitFaceAttributeConverter
+class BitFaceAttributeConverter
         extends AttributeConverters.OfFunctions<BitFace, Integer> {
 
     @Converter

@@ -59,7 +59,7 @@ class BitFaceTest {
             final var face = bitMaskOfLongStreamOfAllExponents().reduce(
                     BitFace.OfLong.of(),
                     BitFace.OfLong::putOn,
-                    BitFace.OfLong::accumulate
+                    BitFace.OfLong::merge
             );
             assertThat(face).isEqualTo(BitFace.OfLong.ofAll());
         }
@@ -69,10 +69,29 @@ class BitFaceTest {
             final var face = bitMaskOfLongStreamOfAllExponents().reduce(
                     BitFace.OfLong.ofAll(),
                     BitFace.OfLong::takeOff,
-                    BitFace.OfLong::accumulate
+                    BitFace.OfLong::merge
             );
             assertThat(face)
                     .isEqualTo(BitFace.OfLong.ofNone());
+        }
+
+        @DisplayName("toMaskSet()")
+        @Nested
+        class ToMaskSetTest {
+
+            @Test
+            void _Empty_OfNone() {
+                final var face = BitFace.OfLong.ofNone();
+                final var set = face.toMaskSet();
+                assertThat(set).isEmpty();
+            }
+
+            @Test
+            void _NotEmpty_OfAll() {
+                final var face = BitFace.OfLong.ofAll();
+                final var set = face.toMaskSet();
+                assertThat(set).isNotEmpty();
+            }
         }
     }
 
@@ -115,7 +134,7 @@ class BitFaceTest {
         final var face = bitMaskStreamOfAllExponents().reduce(
                 BitFace.of(),
                 BitFace::putOn,
-                BitFace::accumulate
+                BitFace::merge
         );
         assertThat(face).isEqualTo(BitFace.ofAll());
     }
@@ -125,9 +144,28 @@ class BitFaceTest {
         final var face = bitMaskStreamOfAllExponents().reduce(
                 BitFace.ofAll(),
                 BitFace::takeOff,
-                BitFace::accumulate
+                BitFace::merge
         );
         assertThat(face)
                 .isEqualTo(BitFace.ofNone());
+    }
+
+    @DisplayName("toMaskSet()")
+    @Nested
+    class ToMaskSetTest {
+
+        @Test
+        void _Empty_OfNone() {
+            final var face = BitFace.ofNone();
+            final var set = face.toMaskSet();
+            assertThat(set).isEmpty();
+        }
+
+        @Test
+        void _NotEmpty_OfAll() {
+            final var face = BitFace.ofAll();
+            final var set = face.toMaskSet();
+            assertThat(set).isNotEmpty();
+        }
     }
 }

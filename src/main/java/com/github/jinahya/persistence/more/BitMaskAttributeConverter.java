@@ -5,7 +5,7 @@ import jakarta.persistence.Converter;
 import java.util.Set;
 
 @Converter
-public class BitMaskAttributeConverter
+class BitMaskAttributeConverter
         extends AttributeConverters.OfFunctions<BitMask, Integer> {
 
     @Converter

@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  */
-public final class BitMask {
+final class BitMask {
 
     /**
      * Represents a mask for {@link BitFace.OfLong face}s
@@ -105,8 +105,8 @@ public final class BitMask {
         @Override
         public boolean equals(final Object obj) {
             if (this == obj) return true;
-            if (!(obj instanceof OfLong ofLong)) return false;
-            return value == ofLong.value;
+            if (!(obj instanceof OfLong that)) return false;
+            return value == that.value;
         }
 
         @Override
@@ -219,8 +219,8 @@ public final class BitMask {
     @Override
     public boolean equals(final Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof BitMask bitMask)) return false;
-        return value == bitMask.value;
+        if (!(obj instanceof BitMask that)) return false;
+        return value == that.value;
     }
 
     @Override

@@ -448,9 +448,6 @@
     </profile>
     <profile>
       <id>eclipselink</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
       <dependencies>
         <dependency>
           <groupId>org.eclipse.persistence</groupId>
@@ -461,6 +458,9 @@
     </profile>
     <profile>
       <id>hibernate</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <dependencies>
         <dependency>
           <groupId>org.hibernate.orm</groupId>

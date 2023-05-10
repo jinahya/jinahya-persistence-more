@@ -130,16 +130,23 @@ public final class AttributeConverters {
     public abstract static class OfFunctions<X, Y>
             implements AttributeConverter<X, Y> {
 
-        public static <A, B> Function<? super A, ? extends B> applyingNonNull(
-                final Supplier<? extends A> supplier, final Function<? super A, ? extends B> function) {
-            Objects.requireNonNull(supplier, "supplier is null");
+        public static <A, B> Function<? super A, ? extends B> applyingNonNullGetting(
+                final Function<? super A, ? extends B> function, final Supplier<? extends A> supplier) {
             Objects.requireNonNull(function, "function is null");
+            Objects.requireNonNull(supplier, "supplier is null");
             return a -> {
                 if (a == null) {
                     a = Objects.requireNonNull(supplier.get(), "null supplied");
                 }
                 return function.apply(a);
             };
+        }
+
+        public static <A, B> Function<? super A, ? extends B> applyingNonNull(
+                final Function<? super A, ? extends B> function, final A def) {
+            Objects.requireNonNull(function, "function is null");
+            Objects.requireNonNull(def, "def is null");
+            return applyingNonNullGetting(function, () -> def);
         }
 
         public static <A, B> Function<? super A, ? extends B> nullAsIsOrApplying(

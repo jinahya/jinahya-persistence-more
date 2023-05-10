@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * An interface for mapping database values to an enum type of specified attribute type.
+ * An interface for mapping a column value to an enum type of specified attribute type.
  *
  * @param <A> attribute type parameter
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
@@ -26,7 +26,8 @@ public interface AttributeEnum<A> {
     interface OfInt {
 
         /**
-         * Finds the enum constant, from specified enum class, whose {@code attribute} equals to specified value.
+         * Finds the enum constant, from specified enum class, whose {@link #attributeAsInt() attribute} equals to
+         * specified value.
          *
          * @param enumClass the enum class; not {@code null}.
          * @param attribute the attribute value to find.
@@ -58,18 +59,16 @@ public interface AttributeEnum<A> {
          * Returns the attribute value of this constant.
          *
          * @return the attribute value of this constant.
+         * @apiNote Default implementation finds a field named as {@value AttributeEnumConstants#FIELD_NAME_ATTRIBUTE},
+         * and returns its value {@link Field#getInt(Object) as an int}.
          */
         default int attributeAsInt() {
             try {
                 final Field field = getClass().getDeclaredField(AttributeEnumConstants.FIELD_NAME_ATTRIBUTE);
-                if (!field.canAccess(null)) {
+                if (!field.canAccess(this)) {
                     field.setAccessible(true);
                 }
-                try {
-                    return field.getInt(this);
-                } catch (final IllegalArgumentException iae) {
-                    throw new RuntimeException("failed to get the value of " + field + " field from " + this, iae);
-                }
+                return field.getInt(this);
             } catch (final ReflectiveOperationException roe) {
                 throw new RuntimeException(
                         "failed to get the value of '" + AttributeEnumConstants.FIELD_NAME_ATTRIBUTE + "' field from "
@@ -115,18 +114,16 @@ public interface AttributeEnum<A> {
          * Returns the attribute value of this constant.
          *
          * @return the attribute value of this constant.
+         * @apiNote Default implementation finds a field named as {@value AttributeEnumConstants#FIELD_NAME_ATTRIBUTE},
+         * and returns its value {@link Field#getLong(Object) as a long}.
          */
         default long attributeAsLong() {
             try {
                 final Field field = getClass().getDeclaredField(AttributeEnumConstants.FIELD_NAME_ATTRIBUTE);
-                if (!field.canAccess(null)) {
+                if (!field.canAccess(this)) {
                     field.setAccessible(true);
                 }
-                try {
-                    return field.getLong(this);
-                } catch (final IllegalArgumentException iae) {
-                    throw new RuntimeException("failed to get the value of " + field + " from " + this, iae);
-                }
+                return field.getLong(this);
             } catch (final ReflectiveOperationException roe) {
                 throw new RuntimeException(
                         "failed to get the value of '" + AttributeEnumConstants.FIELD_NAME_ATTRIBUTE + "' field from "
@@ -163,7 +160,7 @@ public interface AttributeEnum<A> {
         default Character attribute() {
             try {
                 final Field field = getClass().getDeclaredField(AttributeEnumConstants.FIELD_NAME_ATTRIBUTE);
-                if (!field.canAccess(null)) {
+                if (!field.canAccess(this)) {
                     field.setAccessible(true);
                 }
                 final Object value = field.get(this);
@@ -209,7 +206,7 @@ public interface AttributeEnum<A> {
         default String attribute() {
             try {
                 final Field field = getClass().getDeclaredField(AttributeEnumConstants.FIELD_NAME_ATTRIBUTE);
-                if (!field.canAccess(null)) {
+                if (!field.canAccess(this)) {
                     field.setAccessible(true);
                 }
                 final Object value = field.get(this);
@@ -313,13 +310,15 @@ public interface AttributeEnum<A> {
      * Returns the attribute value of this constant.
      *
      * @return the attribute value of this constant.
+     * @apiNote Default implementation find the field named as {@value AttributeEnumConstants#FIELD_NAME_ATTRIBUTE}, and
+     * returns its value.
      */
     @NotNull
     @SuppressWarnings({"unchecked"})
     default A attribute() {
         try {
             final Field field = getClass().getDeclaredField(AttributeEnumConstants.FIELD_NAME_ATTRIBUTE);
-            if (!field.canAccess(null)) {
+            if (!field.canAccess(this)) {
                 field.setAccessible(true);
             }
             final Object value = field.get(this);

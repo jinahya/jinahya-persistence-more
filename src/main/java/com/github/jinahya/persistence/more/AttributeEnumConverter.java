@@ -12,23 +12,23 @@ import static java.util.Arrays.stream;
 /**
  * An interface for converting {@link AttributeEnum} type to database type, and vice versa.
  *
- * @param <E> enum type parameter
- * @param <A> attribute type parameter
+ * @param <X> enum type parameter
+ * @param <Y> attribute type parameter
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  */
-public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
-        implements AttributeConverter<E, A> {
+public abstract class AttributeEnumConverter<X extends AttributeEnum<Y>, Y>
+        implements AttributeConverter<X, Y> {
 
-    public abstract static class OfInt<E extends AttributeEnum.OfInt>
-            implements AttributeConverter<E, Integer> {
+    public abstract static class OfInt<X extends AttributeEnum.OfInt>
+            implements AttributeConverter<X, Integer> {
 
-        protected OfInt(final Set<Class<? extends E>> enumClasses) {
+        protected OfInt(final Set<Class<? extends X>> enumClasses) {
             super();
             Objects.requireNonNull(enumClasses, "enumClasses is null");
             if (enumClasses.isEmpty()) {
                 throw new IllegalArgumentException("enumClasses is empty");
             }
-            for (final Class<? extends E> enumClass : enumClasses) {
+            for (final Class<? extends X> enumClass : enumClasses) {
                 if (enumClass == null) {
                     throw new IllegalArgumentException("one of enumClasses is null");
                 }
@@ -40,7 +40,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
         }
 
         @Override
-        public Integer convertToDatabaseColumn(final E attribute) {
+        public Integer convertToDatabaseColumn(final X attribute) {
             if (attribute == null) {
                 return null;
             }
@@ -48,7 +48,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
         }
 
         @Override
-        public E convertToEntityAttribute(final Integer dbData) {
+        public X convertToEntityAttribute(final Integer dbData) {
             if (dbData == null) {
                 return null;
             }
@@ -59,21 +59,21 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
                             "no enum constant matched, in " + enumClasses + ", for " + dbData));
         }
 
-        protected final Set<Class<? extends E>> enumClasses;
+        protected final Set<Class<? extends X>> enumClasses;
 
-        private final Set<E> enumConstants;
+        private final Set<X> enumConstants;
     }
 
-    public abstract static class OfLong<E extends AttributeEnum.OfLong>
-            implements AttributeConverter<E, Long> {
+    public abstract static class OfLong<X extends AttributeEnum.OfLong>
+            implements AttributeConverter<X, Long> {
 
-        protected OfLong(final Set<Class<? extends E>> enumClasses) {
+        protected OfLong(final Set<Class<? extends X>> enumClasses) {
             super();
             Objects.requireNonNull(enumClasses, "enumClasses is null");
             if (enumClasses.isEmpty()) {
                 throw new IllegalArgumentException("enumClasses is empty");
             }
-            for (final Class<? extends E> enumClass : enumClasses) {
+            for (final Class<? extends X> enumClass : enumClasses) {
                 if (enumClass == null) {
                     throw new IllegalArgumentException("enumClasses contains null");
                 }
@@ -85,7 +85,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
         }
 
         @Override
-        public Long convertToDatabaseColumn(final E attribute) {
+        public Long convertToDatabaseColumn(final X attribute) {
             if (attribute == null) {
                 return null;
             }
@@ -93,7 +93,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
         }
 
         @Override
-        public E convertToEntityAttribute(final Long dbData) {
+        public X convertToEntityAttribute(final Long dbData) {
             if (dbData == null) {
                 return null;
             }
@@ -104,34 +104,34 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
                             "no enum constant matched, in " + enumClasses + ", for " + dbData));
         }
 
-        protected final Set<Class<? extends E>> enumClasses;
+        protected final Set<Class<? extends X>> enumClasses;
 
-        private final Set<E> enumConstants;
+        private final Set<X> enumConstants;
     }
 
-    public abstract static class OfCharacter<E extends AttributeEnum.OfCharacter>
-            extends AttributeEnumConverter<E, Character> {
+    public abstract static class OfCharacter<X extends AttributeEnum.OfCharacter>
+            extends AttributeEnumConverter<X, Character> {
 
-        protected OfCharacter(final Set<Class<? extends E>> enumClasses) {
+        protected OfCharacter(final Set<Class<? extends X>> enumClasses) {
             super(enumClasses);
         }
     }
 
-    public abstract static class OfString<E extends AttributeEnum.OfString>
-            extends AttributeEnumConverter<E, String> {
+    public abstract static class OfString<X extends AttributeEnum.OfString>
+            extends AttributeEnumConverter<X, String> {
 
-        protected OfString(final Set<Class<? extends E>> enumClasses) {
+        protected OfString(final Set<Class<? extends X>> enumClasses) {
             super(enumClasses);
         }
     }
 
-    protected AttributeEnumConverter(final Set<Class<? extends E>> enumClasses) {
+    protected AttributeEnumConverter(final Set<Class<? extends X>> enumClasses) {
         super();
         Objects.requireNonNull(enumClasses, "enumClasses is null");
         if (enumClasses.isEmpty()) {
             throw new IllegalArgumentException("enumClasses is empty");
         }
-        for (final Class<? extends E> enumClass : enumClasses) {
+        for (final Class<? extends X> enumClass : enumClasses) {
             if (enumClass == null) {
                 throw new IllegalArgumentException("one of enumClasses is null");
             }
@@ -142,7 +142,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
     }
 
     @Override
-    public A convertToDatabaseColumn(final E attribute) {
+    public Y convertToDatabaseColumn(final X attribute) {
         if (attribute == null) {
             return null;
         }
@@ -150,7 +150,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
     }
 
     @Override
-    public E convertToEntityAttribute(final A dbData) {
+    public X convertToEntityAttribute(final Y dbData) {
         if (dbData == null) {
             return null;
         }
@@ -161,7 +161,7 @@ public abstract class AttributeEnumConverter<E extends AttributeEnum<A>, A>
                         "no enum constant matched, in " + enumClasses + ", for " + dbData));
     }
 
-    protected final Set<Class<? extends E>> enumClasses;
+    protected final Set<Class<? extends X>> enumClasses;
 
-    private final Set<E> enumConstants;
+    private final Set<X> enumConstants;
 }
