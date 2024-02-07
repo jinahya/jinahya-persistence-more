@@ -9,7 +9,7 @@
     <version>0.9.0</version>
   </parent>
 
-  <artifactId>persistence-more</artifactId>
+  <artifactId>jinahya-persistence-more</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
